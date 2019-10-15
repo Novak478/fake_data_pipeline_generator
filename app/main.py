@@ -1,10 +1,15 @@
+#usr/bin/python3.6
+# coding=utf-8
 from faker import Faker
 from faker.providers import internet
 import json
 
+#TODO: Delete references below when pushing to server test
 ##workon fake_data_pipeline_generator
+#git guide: https://rogerdudler.github.io/git-guide/
 
 fake = Faker()
+txn_creator = Txn_Creator()
 
 #########################
 # INITIALIZE GENERATORS #
@@ -80,8 +85,8 @@ for _ in range(10):
   # print("Country: {}".format(fake.country()))
   print("Country: {}".format("United States"))
   print("Country Code: {}".format("USA"))
-  print("Transaction Amount Raw: {}".format(txngenerator.raw_txn()))
-  print("Transaction Amount Formatted: {}".format(txngenerator.formatted_txn()))
+  print("Transaction Amount Raw: {}".format(txn_creator.raw_txn()))
+  print("Transaction Amount Formatted: {}".format(txn_creator.formatted_txn()))
   print("Email: {}".format(fake.email()))
   print("Domain Name: {}".format(fake.domain_name()))
   print("IPV4: {}".format(fake.ipv4_public(network=False, address_class=None)))
